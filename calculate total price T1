@@ -1,0 +1,25 @@
+// Define a constant for the tax rate (10%)
+const double taxRate = 0.10;
+
+void main() {
+  // List of grocery items as maps with name and price
+  List<Map<String, dynamic>> groceryItems = [
+    {'name': 'Apples', 'price': 2.5},
+    {'name': 'Milk', 'price': 1.5},
+    {'name': 'Bread', 'price': 1.0},
+    {'name': 'Eggs', 'price': 3.0},
+  ];
+
+  // Calculate the total price of items
+  double totalPrice = 0.0;
+  for (var item in groceryItems) {
+    totalPrice += item['price'];
+  }
+
+  // Calculate the price after adding taxes
+  double priceAfterTaxes = totalPrice + (totalPrice * taxRate);
+
+  // Print the results
+  print('Total Price of Grocery Items: \$${totalPrice.toStringAsFixed(2)}');
+  print('Total Price After Adding Taxes: \$${priceAfterTaxes.toStringAsFixed(2)}');
+}
